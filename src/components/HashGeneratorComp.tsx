@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { initGame } from '@/actions/init';
 import { useDictionary } from '@/context/DictionaryProvider';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Copy } from 'lucide-react';
+import { ClipboardCopy, Copy } from 'lucide-react';
 import { toast } from 'sonner';
 
 export function HashGeneratorComponent() {
@@ -71,19 +71,37 @@ export function HashGeneratorComponent() {
     }
   };
 
+  const PasteButton = async () => {
+    const clipboardData = await navigator.clipboard.readText();
+    if (!clipboardData) {
+      toast.error(dict.clipboardEmpty);
+      return;
+    }
+    setCode(clipboardData);
+  };
+
   return (
     <div className="container mx-auto py-2 md:py-8">
       <h2 className="mb-4 text-xl font-semibold text-center">
         {dict.hashGenerator}
       </h2>
 
-      <Textarea
-        value={code}
-        onChange={e => setCode(e.target.value)}
-        placeholder={dict.codePlaceholder}
-        style={{ color: 'black' }}
-        className="min-h-[120px] bg-white my-4"
-      />
+      <div className="flex align-top justify-start my-4">
+        <Button
+          className="max-w-[35px] mr-[4%] md:mr-4"
+          size="icon"
+          onClick={PasteButton}
+        >
+          <ClipboardCopy className="h-[1rem] w-[1rem] scale-100" />
+        </Button>
+        <Textarea
+          value={code}
+          onChange={e => setCode(e.target.value)}
+          placeholder={dict.codePlaceholder}
+          style={{ color: 'black' }}
+          className="min-h-[120px] bg-white"
+        />
+      </div>
 
       <Button
         className="max-w-[300px] w-[48%] mr-[4%] md:mr-4"
