@@ -81,6 +81,7 @@ export function HashGeneratorComponent() {
         value={code}
         onChange={e => setCode(e.target.value)}
         placeholder={dict.codePlaceholder}
+        style={{ color: 'black' }}
         className="min-h-[120px] bg-white my-4"
       />
 
