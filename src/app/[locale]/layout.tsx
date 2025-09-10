@@ -5,6 +5,7 @@ import { DictionaryProvider } from '@/context/DictionaryProvider';
 import { getDictionary } from '@/lib/get-dictionary';
 import { LocaleProvider } from '@/context/LocaleProvider';
 import { Toaster } from '@/components/ui/sonner';
+import { ThemeProvider } from '@/context/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,11 +24,18 @@ export default async function RootLayout({
   const dict = await getDictionary(locale as 'en' | 'vi');
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <DictionaryProvider dict={dict}>
         <LocaleProvider locale={locale as 'en' | 'vi'}>
           <body className={inter.className}>
-            {children}
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              {children}
+            </ThemeProvider>
             <Toaster />
           </body>
         </LocaleProvider>

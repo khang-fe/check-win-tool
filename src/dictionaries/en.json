@@ -68,5 +68,9 @@
   "viewOnEtherscan": "View on Etherscan",
   "checkHashOnExplorer": "Check hash on explorer",
   "go": "Go",
-  "invalidCode": "Code is not valid"
+  "invalidCode": "Code is not valid",
+  "toggleTheme": "Toggle theme",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System"
 }

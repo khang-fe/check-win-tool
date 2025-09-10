@@ -72,5 +72,10 @@
   "checkHashOnExplorer": "Kiểm tra hash trên explorer",
   "go": "Đi",
   "loadingInit": "Đang khởi tạo...",
-  "invalidCode": "Mã không hợp lệ"
+  "invalidCode": "Mã không hợp lệ",
+  "codeLengthError": "Mã phải cốt 10 ký tượng",
+  "toggleTheme": "Chuyển đổi giao diện",
+  "light": "Sáng",
+  "dark": "Tối",
+  "system": "Hệ Thống"
 }
