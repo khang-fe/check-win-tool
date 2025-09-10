@@ -67,5 +67,6 @@
   "loadingInit": "Initializing...",
   "viewOnEtherscan": "View on Etherscan",
   "checkHashOnExplorer": "Check hash on explorer",
-  "go": "Go"
+  "go": "Go",
+  "invalidCode": "Code is not valid"
 }

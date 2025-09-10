@@ -71,5 +71,6 @@
   "viewOnEtherscan": "Xem tôi Etherscan",
   "checkHashOnExplorer": "Kiểm tra hash trên explorer",
   "go": "Đi",
-  "loadingInit": "Đang khởi tạo..."
+  "loadingInit": "Đang khởi tạo...",
+  "invalidCode": "Mã không hợp lệ"
 }

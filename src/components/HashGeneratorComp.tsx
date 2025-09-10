@@ -34,6 +34,7 @@ export function HashGeneratorComponent() {
         console.log('Generated SHA-256 Hash:', generatedHash);
         setHash(generatedHash);
       } catch (err) {
+        toast.error(dict.invalidCode);
         console.error(err);
       }
     });
