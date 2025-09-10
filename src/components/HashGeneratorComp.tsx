@@ -72,7 +72,7 @@ export function HashGeneratorComponent() {
   };
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-2 md:py-8">
       <h2 className="mb-4 text-xl font-semibold text-center">
         {dict.hashGenerator}
       </h2>
