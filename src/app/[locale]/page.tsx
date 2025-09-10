@@ -13,7 +13,7 @@ export default async function HomePage({
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gray-50 py-8">
+      <div className="min-h-screen bg-gray-50 py-2 md:py-8">
         <div className="bg-muted rounded-lg max-h-[300px] w-[96%] h-[200px] mx-auto absolute top-[78px] left-0 right-0 z-[1]">
           <Image
             src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"

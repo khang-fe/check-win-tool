@@ -65,5 +65,7 @@
   "gameCodeInitialized": "Game code initialized successfully!",
   "initError": "Failed to initialize game code. Please try again.",
   "loadingInit": "Initializing...",
-  "viewOnEtherscan": "View on Etherscan"
+  "viewOnEtherscan": "View on Etherscan",
+  "checkHashOnExplorer": "Check hash on explorer",
+  "go": "Go"
 }

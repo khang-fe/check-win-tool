@@ -68,5 +68,8 @@
   "copyHash": "Sao Chép Hash",
   "gameCodeInitialized": "Khởi tạo mã trò chơi thành công!",
   "initError": "Không thành cºng khởi tạo má trò chơi. Vui lý thử lặp.",
-  "viewOnEtherscan": "Xem tôi Etherscan"
+  "viewOnEtherscan": "Xem tôi Etherscan",
+  "checkHashOnExplorer": "Kiểm tra hash trên explorer",
+  "go": "Đi",
+  "loadingInit": "Đang khởi tạo..."
 }

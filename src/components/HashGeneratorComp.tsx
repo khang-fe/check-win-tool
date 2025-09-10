@@ -6,6 +6,7 @@ import { initGame } from '@/actions/init';
 import { useDictionary } from '@/context/DictionaryProvider';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Copy } from 'lucide-react';
+import { toast } from 'sonner';
 
 export function HashGeneratorComponent() {
   const [code, setCode] = useState('');
@@ -55,8 +56,17 @@ export function HashGeneratorComponent() {
   };
 
   const handleCopy = () => {
+    console.log('Copy hash:', hash);
     if (hash) {
       navigator.clipboard.writeText(hash);
+      toast(dict.copied, {
+        description: dict.checkHashOnExplorer,
+        action: {
+          label: dict.go,
+          onClick: () =>
+            window.open(`https://example.com/check/${hash}`, '_blank'),
+        },
+      });
     }
   };
 
@@ -93,7 +103,7 @@ export function HashGeneratorComponent() {
       {hash && (
         <Card className="mt-6 shadow-lg rounded-2xl">
           <CardHeader className="flex flex-row justify-between items-center">
-            <CardTitle className="text-lg">Mã Hash của bạn</CardTitle>
+            <CardTitle className="text-lg">{dict.hashResult}</CardTitle>
             <Button
               variant="ghost"
               size="icon"
@@ -114,7 +124,7 @@ export function HashGeneratorComponent() {
                 window.open(`https://example.com/check/${hash}`, '_blank')
               }
             >
-              Check
+              {dict.checkHashOnExplorer}
             </Button>
           </CardContent>
         </Card>
