@@ -36,7 +36,7 @@ export default async function RootLayout({
             >
               {children}
             </ThemeProvider>
-            <Toaster />
+            <Toaster position="top-center" />
           </body>
         </LocaleProvider>
       </DictionaryProvider>

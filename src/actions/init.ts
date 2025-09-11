@@ -1,5 +1,7 @@
 'use server';
 
+import { hexToUint8Array } from '@/lib/utils';
+
 export async function initGame() {
   console.log('initGame called');
   const res = await fetch(
@@ -18,5 +20,27 @@ export async function initGame() {
     throw new Error(`API error: ${res.statusText}`);
   }
 
+  return res.json();
+}
+
+export async function uploadHexString(hexString: string) {
+  const uint8Array = hexToUint8Array(hexString);
+
+  const blob = new Blob([uint8Array], { type: 'application/octet-stream' });
+  const file = new File([blob], 'quote.bin', {
+    type: 'application/octet-stream',
+  });
+
+  const formData = new FormData();
+  formData.append('file', file);
+
+  const res = await fetch('https://proof.t16z.com/api/upload', {
+    method: 'POST',
+    body: formData,
+  });
+
+  if (!res.ok) {
+    throw new Error('Upload failed');
+  }
   return res.json();
 }
