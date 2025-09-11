@@ -99,8 +99,7 @@ import { useDictionary } from '@/context/DictionaryProvider';
 
   return (
     <>
-      <h1 className="!text-3xl text-center">Verify Game Tool</h1>
-      <div className="container mt-10">
+      <div className="container mt-5">
         <Card>
           <CardContent>
             <div className="grid w-full items-center gap-3 mt-4">
