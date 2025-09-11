@@ -77,5 +77,13 @@
   "toggleTheme": "Chuyển đổi giao diện",
   "light": "Sáng",
   "dark": "Tối",
-  "system": "Hệ Thống"
+  "system": "Hệ Thống",
+  "selectLanguage": "Chọn Ngôn Ngữ",
+  "originalReportCodePrompt": "Nếu bạn có mã báo cáo từ trò chơi, bạn có thể dán nó bên dưới để xác minh tính toàn vẹn của Mã Công Bằng.",
+  "reportCodePlaceholder": "Dán báo cáo của bạn vào đây...",
+  "verifyFairCode": "Xác Minh Mã Công Bằng",
+  "fairCodeValid": "Mã Công Bằng hợp lệ và khớp với hash mong đợi.",
+  "fairCodeInvalid": "Mã Công Bằng không hợp lệ hoặc không khớp với hash mong đợi.",
+  "verifying": "Đang xác minh...",
+  "fairCodeHash": "Hash Mã Công Bằng:"
 }

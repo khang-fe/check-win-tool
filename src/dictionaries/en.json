@@ -72,5 +72,13 @@
   "toggleTheme": "Toggle theme",
   "light": "Light",
   "dark": "Dark",
-  "system": "System"
+  "system": "System",
+  "selectLanguage": "Select Language",
+  "originalReportCodePrompt": "If you have a report code from the game, you can paste it below to verify Fair Code integrity.",
+  "reportCodePlaceholder": "Paste your report here...",
+  "verifyFairCode": "Verify Fair Code",
+  "fairCodeValid": "The Fair Code is valid and matches the expected hash.",
+  "fairCodeInvalid": "The Fair Code is invalid or does not match the expected hash.",
+  "verifying": "Verifying...",
+  "fairCodeHash": "Fair Code Hash:"
 }

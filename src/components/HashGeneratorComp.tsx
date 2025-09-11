@@ -10,6 +10,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Separator } from './ui/separator';
 import { Textarea } from './ui/textarea';
+import { useDictionary } from '@/context/DictionaryProvider';
 
 /*************  ✨ Windsurf Command ⭐  *************/
 /**
@@ -34,6 +35,8 @@ import { Textarea } from './ui/textarea';
   const [fairCode, setFairCode] = useState<string>('');
   const [reportCode, setReportCode] = useState<string>('');
   const [isUploading, setIsUploading] = useState<boolean>(false);
+
+  const dict = useDictionary();
 
   const PasteButton = async (inputField: string) => {
     const clipboardData = await navigator.clipboard.readText();
@@ -87,7 +90,7 @@ import { Textarea } from './ui/textarea';
         toast.error('Upload failed: No URL returned');
       }
     } catch (err) {
-      toast.error('Upload failed');
+      toast.error(dict.reportCodeError);
       console.error(err);
     } finally {
       setIsUploading(false);
@@ -100,7 +103,7 @@ import { Textarea } from './ui/textarea';
       <div className="container mt-10">
         <Card>
           <CardContent>
-            <div className="grid w-full max-w-md items-center gap-3 mt-4">
+            <div className="grid w-full items-center gap-3 mt-4">
               <div className="flex justify-between w-full">
                 <Label htmlFor="serverhash" className="text-lg">
                   Server Seed Hashed:
@@ -114,7 +117,7 @@ import { Textarea } from './ui/textarea';
                   <span className="text-sm">Paste</span>
                 </Button>
               </div>
-              <div className="flex w-full max-w-md items-center gap-3">
+              <div className="flex w-full items-center gap-3">
                 <Input
                   onChange={onChangeServerHash}
                   value={serverhash}
@@ -124,7 +127,7 @@ import { Textarea } from './ui/textarea';
                 />
               </div>
             </div>
-            <div className="grid w-full max-w-md items-center gap-3 mt-4">
+            <div className="grid w-full items-center gap-3 mt-4">
               <div className="flex justify-between w-full">
                 <Label htmlFor="serverhash" className="text-lg">
                   Merkle Root:
@@ -138,7 +141,7 @@ import { Textarea } from './ui/textarea';
                   <span className="text-sm">Paste</span>
                 </Button>
               </div>
-              <div className="flex w-full max-w-md items-center gap-3">
+              <div className="flex w-full items-center gap-3">
                 <Input
                   onChange={onChangeMerkleRoot}
                   value={merkleRoot}
@@ -177,8 +180,7 @@ import { Textarea } from './ui/textarea';
         <div className="flex flex-col items-center my-4">
           <Separator className="my-2" />
           <span className="text-sm text-center break-words">
-            If you have a report code from the game, you can paste it below to
-            verify Fair Code
+            {dict.originalReportCodePrompt}
           </span>
           <Separator className="my-2" />
         </div>
@@ -207,7 +209,7 @@ import { Textarea } from './ui/textarea';
           />
 
           <Button
-            disabled={isUploading}
+            disabled={isUploading || !reportCode}
             onClick={handleUpload}
             type="submit"
             variant="outline"
