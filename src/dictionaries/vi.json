@@ -85,5 +85,10 @@
   "fairCodeValid": "Mã Công Bằng hợp lệ và khớp với hash mong đợi.",
   "fairCodeInvalid": "Mã Công Bằng không hợp lệ hoặc không khớp với hash mong đợi.",
   "verifying": "Đang xác minh...",
-  "fairCodeHash": "Hash Mã Công Bằng:"
+  "fairCodeHash": "Hash Mã Công Bằng:",
+  "noReportCode": "Chưa cung cấp mã báo cáo.",
+  "paste": "Dán",
+  "pasteSuccess": "Đã dán từ clipboard",
+  "reportCodeError": "Không thể tải lên mã báo cáo. Vui lòng thử lại.",
+  "pleaseEnterReportCode": "Vui lòng nhập mã báo cáo"
 }

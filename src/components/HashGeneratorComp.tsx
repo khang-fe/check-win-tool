@@ -41,20 +41,17 @@ import { useDictionary } from '@/context/DictionaryProvider';
   const PasteButton = async (inputField: string) => {
     const clipboardData = await navigator.clipboard.readText();
     if (!clipboardData) {
-      toast.error('somethineg went wrong');
       return;
     }
     if (inputField === 'serverhash') setServerhash(clipboardData);
     if (inputField === 'merkleRoot') setMerkleRoot(clipboardData);
     if (inputField === 'reportCode') setReportCode(clipboardData);
-    toast.success('Pasted from clipboard');
+    toast.success(dict.pasteSuccess);
   };
 
   const combineHash = useCallback(async () => {
-    console.log('combineHash called');
     const hash = serverhash + merkleRoot;
     const generatedHash = await sha256(hash);
-    console.log('generatedHash', generatedHash);
 
     setFairCode(generatedHash);
   }, [serverhash, merkleRoot]);
@@ -77,7 +74,7 @@ import { useDictionary } from '@/context/DictionaryProvider';
   const handleUpload = async () => {
     try {
       if (!reportCode) {
-        toast.error('Please enter a report code');
+        toast.error(dict.pleaseEnterReportCode);
         return;
       }
       setIsUploading(true);
@@ -85,9 +82,8 @@ import { useDictionary } from '@/context/DictionaryProvider';
       console.log('Upload response:', res);
       if (res && res.url) {
         window.open(res.url, '_blank');
-        toast.success('Upload successful! Opening link...');
       } else {
-        toast.error('Upload failed: No URL returned');
+        toast.error(dict.reportCodeError);
       }
     } catch (err) {
       toast.error(dict.reportCodeError);
@@ -113,7 +109,7 @@ import { useDictionary } from '@/context/DictionaryProvider';
                   variant="outline"
                 >
                   <Copy className="h-4 w-4"></Copy>
-                  <span className="text-sm">Paste</span>
+                  <span className="text-sm">{dict.paste}</span>
                 </Button>
               </div>
               <div className="flex w-full items-center gap-3">
@@ -137,7 +133,7 @@ import { useDictionary } from '@/context/DictionaryProvider';
                   variant="outline"
                 >
                   <Copy className="h-4 w-4"></Copy>
-                  <span className="text-sm">Paste</span>
+                  <span className="text-sm">{dict.paste}</span>
                 </Button>
               </div>
               <div className="flex w-full items-center gap-3">
@@ -195,7 +191,7 @@ import { useDictionary } from '@/context/DictionaryProvider';
               variant="outline"
             >
               <Copy className="h-4 w-4"></Copy>
-              <span className="text-sm">Paste</span>
+              <span className="text-sm">{dict.paste}</span>
             </Button>
           </div>
 
