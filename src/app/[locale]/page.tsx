@@ -22,7 +22,7 @@ export default async function HomePage({
             className="h-full w-full rounded-lg object-cover dark:brightness-[0.2] dark:grayscale"
           />
         </div>
-        <div className="container mx-auto px-4 md:px-10 z-[2] relative">
+        <div className="container mx-auto px-4 md:px-10 z-[2] relative pb-20">
           <span className="mb-8 text-left  w-full break-words">
             *{dict.descriptionGeneral} {dict.enterCodePrompt}
           </span>
