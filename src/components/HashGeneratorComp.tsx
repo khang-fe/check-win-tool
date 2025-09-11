@@ -159,7 +159,7 @@ import { useDictionary } from '@/context/DictionaryProvider';
                 <span>
                   {fairCode ? (
                     <div className="flex flex-col gap-2 bg-slate-100 p-3 rounded-md">
-                      <span className="font-mono break-all text-sm">
+                      <span className="font-mono break-all text-sm !text-black">
                         {fairCode}
                       </span>
                     </div>
