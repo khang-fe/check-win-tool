@@ -90,5 +90,10 @@
   "paste": "Dán",
   "pasteSuccess": "Đã dán từ clipboard",
   "reportCodeError": "Không thể tải lên mã báo cáo. Vui lòng thử lại.",
-  "pleaseEnterReportCode": "Vui lòng nhập mã báo cáo"
+  "pleaseEnterReportCode": "Vui lòng nhập mã báo cáo",
+  "verifyLink": "Xác Minh",
+  "reportCode": "Mã Báo Cáo",
+  "serverHash": "Server Hash",
+  "merkleRoot": "Merkle Root",
+  "fairCode": "Mã Công Bằng"
 }

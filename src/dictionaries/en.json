@@ -85,5 +85,21 @@
   "paste": "Paste",
   "pasteSuccess": "Pasted from clipboard",
   "reportCodeError": "Failed to upload report code. Please try again.",
-  "pleaseEnterReportCode": "Please enter a report code"
+  "pleaseEnterReportCode": "Please enter a report code",
+  "verifyLink": "Verify",
+  "reportCode": "Report Code",
+  "serverHash": "Server Hash",
+  "merkleRoot": "Merkle Root",
+  "fairCode": "Fair Code",
+  "combineHashes": "Combine Hashes",
+  "uploadReportCode": "Upload Report Code",
+  "isUploading": "Uploading...",
+  "uploadSuccess": "Upload successful! Opening link...",
+  "uploadError": "Upload failed: No URL returned",
+  "copyHashError": "Failed to copy hash. Please try again.",
+  "codeLengthError": "Code must be at least 10 characters long",
+  "enterServerHash": "Enter server hash here...",
+  "enterMerkleRoot": "Enter merkle root here...",
+  "enterReportCode": "Enter report code here...",
+  "verify": "Verify"
 }

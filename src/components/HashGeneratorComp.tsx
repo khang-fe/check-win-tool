@@ -210,7 +210,7 @@ import { useDictionary } from '@/context/DictionaryProvider';
             variant="outline"
           >
             <span className="text-sm">
-              {isUploading ? 'Uploading...' : 'Verify'}
+              {isUploading ? `${dict.verifying}...` : dict.verifyLink}
             </span>
           </Button>
         </div>
